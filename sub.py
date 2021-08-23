@@ -58,7 +58,7 @@ def login(s: requests.Session, username, password, cookie_file: Path):
         else:
             print("cookie有效，跳过登录环节")
             return
-    print(username,password)
+    
     payload = {
         "username": username,
         "password": password
@@ -234,7 +234,7 @@ def report(username, password):
     s.headers.update(header)
 
     print(datetime.now(tz=pytz.timezone("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S %Z"))
-    for i in range(randint(10, 600), 0, -1):
+    for i in range(randint(1, 30), 0, -1):
         print("\r等待{}秒后填报".format(i), end='')
         sleep(1)
 
@@ -245,4 +245,5 @@ def report(username, password):
 
 
 if __name__ == "__main__":
+    print(username,password)
     report(username=user, password=passwd)
