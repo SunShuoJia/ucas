@@ -58,7 +58,7 @@ def login(s: requests.Session, username, password, cookie_file: Path):
         else:
             print("cookie有效，跳过登录环节")
             return
-
+    print(username,password)
     payload = {
         "username": username,
         "password": password
