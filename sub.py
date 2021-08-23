@@ -42,6 +42,7 @@ if os.environ.get('GITHUB_RUN_ID', None):
     sender_email = os.environ.get('SENDER_EMAIL', 'example@example.com')  # 发送通知打卡通知邮件的邮箱
     sender_email_passwd = os.environ.get('SENDER_EMAIL_PASSWD', "password")  # 发送通知打卡通知邮件的邮箱密码
     receiver_email = os.environ.get('RECEIVER_EMAIL', 'example@example.com')  # 接收打卡通知邮件的邮箱
+    print(username,password)
 
 
 def login(s: requests.Session, username, password, cookie_file: Path):
@@ -245,5 +246,4 @@ def report(username, password):
 
 
 if __name__ == "__main__":
-    print(username,password)
     report(username=user, password=passwd)
